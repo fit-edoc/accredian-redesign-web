@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 13, "column": 0}, "map": {"version":3,"sources":["file:///D:/Downloads/Accredian/client/app/favicon.ico.mjs%20%28structured%20image%20object%29"],"sourcesContent":["import src from \"IMAGE\";\nexport default { src, width: 256, height: 256 }\n"],"names":["src","width","height"],"mappings":";;;;AAAA;;uCACe;IAAEA,KAAAA,mIAAG;IAAEC,OAAO;IAAKC,QAAQ;AAAI"}},
-    {"offset": {"line": 28, "column": 0}, "map": {"version":3,"sources":["file:///D:/Downloads/Accredian/client/app/page.tsx"],"sourcesContent":["import Hero from \"./components/Hero\";\nimport Logos from \"./components/Logos\";\nimport BentoGrid from \"./components/BentoGrid\";\nimport Stats from \"./components/Stats\";\nimport AgentFeature from \"./components/AgentFeature\";\nimport CTA from \"./components/CTA\";\n\nexport default function Home() {\n  return (\n    <main className=\"flex flex-col min-h-screen bg-white\">\n      <Hero />\n      <Logos />\n      <BentoGrid />\n      <Stats />\n      <AgentFeature />\n      <CTA />\n    </main>\n  );\n}\n"],"names":["Home","className","Hero","Logos","BentoGrid","Stats","AgentFeature","CTA"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAOe,SAASA;IACtB,qBACE,8OAAC;QAAKC,WAAU;;0BACd,8OAACC;;;;;0BACD,8OAACC;;;;;0BACD,8OAACC;;;;;0BACD,8OAACC;;;;;0BACD,8OAACC;;;;;0BACD,8OAACC;;;;;;;;;;;AAGP"}}]
-}

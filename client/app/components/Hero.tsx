@@ -1,10 +1,34 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
+import axios from 'axios';
 
 const Hero = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    workEmail: '',
+    companySize: ''
+  });
+  const [status, setStatus] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('Submitting...');
+    try {
+      const response = await axios.post('http://localhost:8000/api/lead', formData);
+      setStatus('Success! We will contact you soon.');
+      setFormData({ name: '', workEmail: '', companySize: '' });
+    } catch (error) {
+      console.error('Error submitting form', error);
+      setStatus('Error submitting form. Please try again.');
+    }
+  };
   return (
     <section id="home" className="relative pt-32 pb-20 md:pt-20 md:pb-32 overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -71,29 +95,34 @@ const Hero = () => {
                 <h3 className="text-2xl font-bold text-zinc-900 mb-2">Request Consultation</h3>
                 <p className="text-zinc-500 text-sm mb-6">Fill out the form below and our enterprise team will reach out to you within 24 hours.</p>
                 
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div>
                     <label className="block text-sm font-medium text-zinc-700 mb-1">Full Name</label>
-                    <input type="text" className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all bg-zinc-50 focus:bg-white" placeholder="John Doe" />
+                    <input type="text" name="name" value={formData.name} onChange={handleChange} required className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all bg-zinc-50 focus:bg-white" placeholder="John Doe" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-zinc-700 mb-1">Work Email</label>
-                    <input type="email" className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all bg-zinc-50 focus:bg-white" placeholder="john@company.com" />
+                    <input type="email" name="workEmail" value={formData.workEmail} onChange={handleChange} required className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all bg-zinc-50 focus:bg-white" placeholder="john@company.com" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-zinc-700 mb-1">Company Size</label>
-                    <select className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all bg-zinc-50 focus:bg-white text-zinc-600">
-                      <option>Select size</option>
-                      <option>1-50 employees</option>
-                      <option>51-200 employees</option>
-                      <option>201-1000 employees</option>
-                      <option>1000+ employees</option>
+                    <select name="companySize" value={formData.companySize} onChange={handleChange} required className="w-full px-4 py-3 rounded-xl border border-zinc-200 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all bg-zinc-50 focus:bg-white text-zinc-600">
+                      <option value="" disabled>Select size</option>
+                      <option value="1-50 employees">1-50 employees</option>
+                      <option value="51-200 employees">51-200 employees</option>
+                      <option value="201-1000 employees">201-1000 employees</option>
+                      <option value="1000+ employees">1000+ employees</option>
                     </select>
                   </div>
-                  <button type="button" className="w-full mt-2 bg-orange-500 hover:bg-orange-600 text-white font-medium py-3.5 px-4 rounded-xl transition-colors shadow-lg shadow-orange-500/30 flex items-center justify-center gap-2 group">
+                  <button type="submit" className="w-full mt-2 bg-orange-500 hover:bg-orange-600 text-white font-medium py-3.5 px-4 rounded-xl transition-colors shadow-lg shadow-orange-500/30 flex items-center justify-center gap-2 group">
                     Get Free Consultation
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
+                  {status && (
+                    <p className={`text-sm text-center mt-2 ${status.includes('Error') ? 'text-red-500' : status.includes('Submitting') ? 'text-zinc-500' : 'text-green-500'}`}>
+                      {status}
+                    </p>
+                  )}
                 </form>
                 <p className="text-xs text-zinc-400 text-center mt-4">By submitting, you agree to our Terms and Privacy Policy.</p>
               </div>

@@ -12,7 +12,7 @@ const logosRow1 = [
 const logosRow2 = [
   { name: "ADP", src: "/images/logos/adp.png" },
   { name: "Bayer", src: "/images/logos/bayer.png" },
-  { name: "Reliance", src: "/images/rel.png" }
+  { name: "Reliance", src: "/images/logos/rel.png" }
 ];
 
 const MarqueeRow = ({ items, direction }: { items: typeof logosRow1, direction: 'left' | 'right' }) => {

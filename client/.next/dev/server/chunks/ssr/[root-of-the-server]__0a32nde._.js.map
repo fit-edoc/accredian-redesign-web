@@ -1,8 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 13, "column": 0}, "map": {"version":3,"sources":["file:///D:/Downloads/Accredian/client/app/favicon.ico.mjs%20%28structured%20image%20object%29"],"sourcesContent":["import src from \"IMAGE\";\nexport default { src, width: 256, height: 256 }\n"],"names":["src","width","height"],"mappings":";;;;AAAA;;uCACe;IAAEA,KAAAA,mIAAG;IAAEC,OAAO;IAAKC,QAAQ;AAAI"}},
-    {"offset": {"line": 28, "column": 0}, "map": {"version":3,"sources":["file:///D:/Downloads/Accredian/client/app/pages/Hero.tsx"],"sourcesContent":["import React from 'react'\r\n\r\nconst Hero = () => {\r\n  return (\r\n    <div className='h-screen w-screen bg-yellow-300'>Hero</div>\r\n  )\r\n}\r\n\r\nexport default Hero"],"names":["Hero","className"],"mappings":";;;;;;AAEA,MAAMA,OAAO;IACX,qBACE,8OAAC;QAAIC,WAAU;kBAAkC;;;;;;AAErD;uCAEeD"}},
-    {"offset": {"line": 49, "column": 0}, "map": {"version":3,"sources":["file:///D:/Downloads/Accredian/client/app/page.tsx"],"sourcesContent":["import Image from \"next/image\";\nimport HeroSection from \"./pages/Hero\";\n\nexport default function Home() {\n  return (\n    <>\n      <HeroSection variant=\"network\" />\n      <HeroSection variant=\"edtech\" />\n    </>\n  );\n}\n"],"names":["Home","variant"],"mappings":";;;;;AACA;;;AAEe,SAASA;IACtB,qBACE;;0BACE,8OAAC,gIAAW;gBAACC,SAAQ;;;;;;0BACrB,8OAAC,gIAAW;gBAACA,SAAQ;;;;;;;;AAG3B"}}]
-}
