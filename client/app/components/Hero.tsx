@@ -13,15 +13,16 @@ const Hero = () => {
   });
   const [status, setStatus] = useState('');
 
+ 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('Submitting...');
     try {
-      const response = await axios.post('http://localhost:8000/api/lead', formData);
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/lead`, formData);
       setStatus('Success! We will contact you soon.');
       setFormData({ name: '', workEmail: '', companySize: '' });
     } catch (error) {
