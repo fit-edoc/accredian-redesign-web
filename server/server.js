@@ -8,7 +8,7 @@ const leadRoutes = require("./router/leadRoute");
 const app = express();
 
 app.use(cors({
-    origin:"https://accredian-redesign-web.vercel.app/",
+    origin:["https://accredian-redesign-web.vercel.app/","http://localhost:3000/"],
     credentials:true,
     methods:["GET","POST","PUT","DELETE"],
     allowedHeaders:["Content-Type","Authorization","X-Requested-With"]
