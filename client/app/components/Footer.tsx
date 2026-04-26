@@ -28,19 +28,19 @@ const Footer = () => {
               Next-Gen Expertise For Your Enterprise. Re-skill high-impact leaders and accelerate growth.
             </p>
             <div className="flex items-center gap-4">
-              <Link href="#" className="w-10 h-10 rounded-full bg-zinc-50 flex items-center justify-center text-zinc-500 hover:bg-orange-50 hover:text-orange-500 transition-colors">
+              <Link href="https://in.linkedin.com/school/accredianedu/" className="w-10 h-10 rounded-full bg-zinc-50 flex items-center justify-center text-zinc-500 hover:bg-orange-50 hover:text-orange-500 transition-colors">
                 <FaLinkedin className="w-4 h-4" />
               </Link>
-              <Link href="#" className="w-10 h-10 rounded-full bg-zinc-50 flex items-center justify-center text-zinc-500 hover:bg-orange-50 hover:text-orange-500 transition-colors">
+              <Link href="https://www.instagram.com/accredian_edu" className="w-10 h-10 rounded-full bg-zinc-50 flex items-center justify-center text-zinc-500 hover:bg-orange-50 hover:text-orange-500 transition-colors">
                 <FaInstagram className="w-4 h-4" />
               </Link>
-              <Link href="#" className="w-10 h-10 rounded-full bg-zinc-50 flex items-center justify-center text-zinc-500 hover:bg-orange-50 hover:text-orange-500 transition-colors">
+              <Link href="https://x.com/accredianedu" className="w-10 h-10 rounded-full bg-zinc-50 flex items-center justify-center text-zinc-500 hover:bg-orange-50 hover:text-orange-500 transition-colors">
                 <FaTwitter className="w-4 h-4" />
               </Link>
-              <Link href="#" className="w-10 h-10 rounded-full bg-zinc-50 flex items-center justify-center text-zinc-500 hover:bg-orange-50 hover:text-orange-500 transition-colors">
+              <Link href="https://www.youtube.com/channel/UCE0L_4ADPU2iyKnDJ0xRzyA" className="w-10 h-10 rounded-full bg-zinc-50 flex items-center justify-center text-zinc-500 hover:bg-orange-50 hover:text-orange-500 transition-colors">
                 <FaYoutube className="w-4 h-4" />
               </Link>
-              <Link href="#" className="w-10 h-10 rounded-full bg-zinc-50 flex items-center justify-center text-zinc-500 hover:bg-orange-50 hover:text-orange-500 transition-colors">
+              <Link href="https://www.facebook.com/accredianlearn" className="w-10 h-10 rounded-full bg-zinc-50 flex items-center justify-center text-zinc-500 hover:bg-orange-50 hover:text-orange-500 transition-colors">
                 <FaFacebook className="w-4 h-4" />
               </Link>
             </div>
